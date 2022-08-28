@@ -1,7 +1,7 @@
 import os
 import discord
 import leetcode_url
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 
 client = discord.Client(intents=discord.Intents.all())
 
@@ -30,6 +30,6 @@ async def on_message(message):
 
 
 if __name__ == "__main__":
-    load_dotenv()
+    # load_dotenv()
     TOKEN = os.getenv("DISCORD_TOKEN", default="")
     client.run(TOKEN)
