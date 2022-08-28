@@ -26,11 +26,13 @@ async def on_message(message):
                 await message.channel.send(leetcode_url.get_problem_url(3))
             else:
                 await message.channel.send(leetcode_url.get_problem_url(0))
+        else:
+            await message.channel.send(leetcode_url.get_problem_url(0))
 
 
 
 if __name__ == "__main__":
     # load_dotenv()
     # TOKEN = os.getenv("DISCORD_TOKEN", default="")
-    # client.run(TOKEN)
-    print("APPLE")
+    TOKEN = os.environ['DISCORD_TOKEN']
+    client.run(TOKEN)
