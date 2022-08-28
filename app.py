@@ -28,6 +28,6 @@ async def on_message(message):
                 await message.channel.send(leetcode_url.get_problem_url(0))
 
 
-load_dotenv()
+# load_dotenv()
 DISCORD_TOKEN = os.getenv("DISCORD_TOKEN", default="")
 client.run(DISCORD_TOKEN)
