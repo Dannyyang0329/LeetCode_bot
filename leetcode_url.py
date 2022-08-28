@@ -54,6 +54,6 @@ def get_problem_url(level = 0, problems = None):
         random_idx = random.randint(0, len(hard_problems)-1)
         return base_url + hard_problems[random_idx]
 
-    return get_problem_url(0, problems = [easy_problems, medium_problems, hard_problems])
+    return get_problem_url(random.randint(1, 3), problems = [easy_problems, medium_problems, hard_problems])
 
 
