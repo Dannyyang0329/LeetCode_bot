@@ -30,4 +30,6 @@ async def on_message(message):
 
 # load_dotenv()
 DISCORD_TOKEN = os.getenv("DISCORD_TOKEN", default="")
+print(DISCORD_TOKEN)
+print("READY\n\n\n")
 client.run(DISCORD_TOKEN)
