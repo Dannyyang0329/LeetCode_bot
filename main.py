@@ -1,6 +1,7 @@
-import env
+import os
 import discord
 import leetcode_url
+from dotenv import load_dotenv
 
 client = discord.Client(intents=discord.Intents.all())
 
@@ -27,4 +28,6 @@ async def on_message(message):
                 await message.channel.send(leetcode_url.get_problem_url(0))
 
 
-client.run(env.get_token())
+load_dotenv()
+DISCORD_TOKEN = os.getenv("DISCORD_TOKEN", default="")
+client.run(DISCORD_TOKEN)
