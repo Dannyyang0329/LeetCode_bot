@@ -1,5 +1,2 @@
-discord
-dotenv
-json
-random
-requests
+discord.py
+python-dotenv
