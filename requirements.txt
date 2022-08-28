@@ -1,0 +1,6 @@
+os
+discord
+dotenv
+json
+random
+requests
