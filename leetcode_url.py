@@ -46,13 +46,16 @@ def get_problem_url(level = 0, problems = None):
 
     if level == 1:
         random_idx = random.randint(0, len(easy_problems)-1)
-        return base_url + easy_problems[random_idx]
+        question_name = easy_problems[random_idx]
+        return question_name, (base_url + question_name)
     elif level == 2:
         random_idx = random.randint(0, len(medium_problems)-1)
-        return base_url + medium_problems[random_idx]
+        question_name = medium_problems[random_idx]
+        return question_name, (base_url + question_name)
     elif level == 3:
         random_idx = random.randint(0, len(hard_problems)-1)
-        return base_url + hard_problems[random_idx]
+        question_name = medium_problems[random_idx]
+        return question_name, (base_url + question_name)
 
     return get_problem_url(random.randint(1, 3), problems = [easy_problems, medium_problems, hard_problems])
 
