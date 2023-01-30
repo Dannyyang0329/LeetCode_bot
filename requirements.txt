@@ -1,0 +1,6 @@
+flask
+json
+python-dotenv
+gunicorn
+requests
+discord.py
