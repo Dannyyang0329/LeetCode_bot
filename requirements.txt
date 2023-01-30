@@ -1,5 +1,3 @@
-flask
-json
 python-dotenv
 gunicorn
 requests
