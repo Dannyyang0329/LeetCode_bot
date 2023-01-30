@@ -57,7 +57,7 @@ async def on_message(message):
 # timer = Timer(30, create_problem_thread)
 
 if __name__ == "__main__":
-    load_dotenv()
+    #load_dotenv()
     # timer.start()
 
     # a = create_problem_thread()
