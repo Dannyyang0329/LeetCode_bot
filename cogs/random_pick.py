@@ -5,7 +5,6 @@ from discord import app_commands
 from discord.ext import commands
 from discord.app_commands import Choice
 
-
 from leetcode import LeetcodeProblem
 
 class RandomPick(commands.Cog):
@@ -32,9 +31,18 @@ class RandomPick(commands.Cog):
         difficulty_text_list = ["RANDOM", "EASY", "MEDIUM", "HARD"]
         assert 0 <= difficulty_value <= 3
         await interaction.response.send_message(f"Creating a thread for problem: {question_name} [{difficulty_text_list[difficulty_value]}]", ephemeral=False)
+        # Prepare embed message
+        embed=discord.Embed(
+            title=question_name,
+            url=url,
+            description="LeetCode Time: Let's keep the rat race going !\n\nMission accomplished? Time to show off! Post your code in the chat, but shield it with spoiler tags.\n\nNo peeking allowed 🫣",
+            color=0x328cec,
+        )
+        embed.set_thumbnail(url="https://cdn-icons-png.flaticon.com/512/4712/4712104.png")
+
         thread = await channel.create_thread(name='Problem : '+question_name, type=discord.ChannelType.public_thread)
+        await thread.send(embed=embed)
         await thread.send("@everyone")
-        await thread.send(url)
        
 
 # Cog setup 
