@@ -29,7 +29,9 @@ class RandomPick(commands.Cog):
         difficulty_value = difficulty.value if difficulty != None else random.randint(1, 3)
         question_name, url = self.leetcode_agent.get_problem_url(difficulty_value)
         # Create a thread with the question name and send the url
-        await interaction.response.send_message(f"Creating a thread for problem: {question_name} [{["RANDOM", "EASY", "MEDIUM", "HARD"][difficulty_value]}]", ephemeral=False)
+        difficulty_text_list = ["RANDOM", "EASY", "MEDIUM", "HARD"]
+        assert 0 <= difficulty_value <= 3
+        await interaction.response.send_message(f"Creating a thread for problem: {question_name} [{difficulty_text_list[difficulty_value]}]", ephemeral=False)
         thread = await channel.create_thread(name='Problem : '+question_name, type=discord.ChannelType.public_thread)
         await thread.send("@everyone")
         await thread.send(url)
